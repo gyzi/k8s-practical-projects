@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: react-frontend
+  name: react-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: react-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: react-frontend
+    spec:
+      containers:
+      - image: react-backend
+        name: backend
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
